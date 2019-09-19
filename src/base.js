@@ -21,7 +21,7 @@ class Board extends React.Component {
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    if (calculateWineer(squares) || squares[i]) {
+    if (calculateWinner(squares) || squares[i]) {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
@@ -41,7 +41,7 @@ class Board extends React.Component {
   }
 
   render() {
-    const winner = calculateWineer(this.state.squares);
+    const winner = calculateWinner(this.state.squares);
     let status;
 
     if (winner) {
@@ -89,9 +89,9 @@ class Game extends React.Component {
   }
 }
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+// ReactDOM.render(<Game />, document.getElementById("root"));
 
-function calculateWineer(squares) {
+function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
