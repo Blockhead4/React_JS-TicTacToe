@@ -57,7 +57,7 @@ class Game extends React.Component {
 
 // ========================================
 
-// ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<Game />, document.getElementById("root"));
 
 const lines = [
   [0, 1, 2],
