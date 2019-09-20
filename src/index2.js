@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { createSecureContext } from "tls";
 
 function Square(props) {
   return (
@@ -57,7 +58,7 @@ class Game extends React.Component {
     };
   }
 
-  handleClick(i) {
+  handleCilck(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
@@ -99,7 +100,7 @@ class Game extends React.Component {
     let status;
 
     if (winner) {
-      status = "Winner: " + winner;
+      status = "Winner" + winner;
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
@@ -107,7 +108,7 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          <Board squares={current.squares} onClick={i => this.handleCilck(i)} />
         </div>
         <div className="game-info">
           <div>{status}</div>
